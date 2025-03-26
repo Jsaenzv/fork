@@ -13,11 +13,12 @@ int
 main(int argc, char *argv[])
 {
 	if (argc == 0) {
-		printf("Debes incluir un comando a ejecutar en tus argumentos\n");
+		printf("Debes incluir un comando a ejecutar en tus "
+		       "argumentos\n");
 		return 2;
 	}
 	char *argumento = NULL;
-    size_t largo = 0;
+	size_t largo = 0;
 	ssize_t cantidad_argumentos = 0;
 
 	char *argumentos[6];
@@ -30,7 +31,8 @@ main(int argc, char *argv[])
 
 	while (getline(&argumento, &largo, stdin) != -1) {
 		cantidad_caracteres = strlen(argumento);
-		if (cantidad_caracteres > 0 && argumento[cantidad_caracteres - 1] == '\n') {
+		if (cantidad_caracteres > 0 &&
+		    argumento[cantidad_caracteres - 1] == '\n') {
 			argumento[cantidad_caracteres - 1] = '\0';
 		}
 		cantidad_argumentos++;
